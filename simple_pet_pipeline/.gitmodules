@@ -1,0 +1,3 @@
+[submodule "image_flow"]
+	path = image_flow
+	url = https://github.com/tfunck/image_flow
