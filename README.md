@@ -1,8 +1,8 @@
-# Pediatric FDOPA Pipeline
+# Simple PET Pipeline
 
 ## About
 
-Pipeline to do analysis of pediatric F-DOPA scans.
+Pipeline to do image processing and analysis for PET scans.
 
 ## Installation
 * Install [Python](https://www.python.org/downloads/)
@@ -11,11 +11,11 @@ Pipeline to do analysis of pediatric F-DOPA scans.
 
 `pip install --user nibabel antspyx matplotlib pandas` 
 
-`git clone https://github.com/tfunck/pediatric_fdopa_pipeline`
+`git clone https://github.com/tfunck/simple_pet_pipeline`
 
 ## Useage
 ### To run pipeline with default settings:
-python3 pediatric_fdopa_pipeline.py
+python3 simple_pet_pipeline/simple_pet-pipeline.py
 
 ### User options
 
@@ -27,7 +27,6 @@ python3 pediatric_fdopa_pipeline.py
 * --roi-labels : Label values for target region (e.g., striatum); default=[11,12,13]
 
 ### Warning
-
 
 The pipeline does not keep track of whether upstream files (e.g., *file_1*) are older than downstream files (e.g., *file_n*). Hence, if you delete an upstream file and rerun the pipline, it will not create a new version of the downstream file.
 
@@ -81,6 +80,16 @@ Required fields:
 		120]
 
 }
+
+# Testing
+
+## Download test data
+
+`aws s3 sync --no-sign-request s3://openneuro.org/ds001705 ds001705-download/`
+
+## Run tests
+
+todo: pytest 
 
 ## To Do
 
